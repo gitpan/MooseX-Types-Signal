@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101840, CPAN::Meta::Converter version 2.101670'
+generated_by: 'Dist::Zilla version 4.101920, CPAN::Meta::Converter version 2.101670'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,33 +23,33 @@ requires:
   Scalar::Util: 0
 resources:
   repository: http://github.com/jrockway/moosex-types-signal
-version: 1.101880
+version: 1.101920
 x_Dist_Zilla:
   plugins:
     -
       class: Dist::Zilla::Plugin::AutoPrereq
       name: AutoPrereq
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::AutoVersion
       name: AutoVersion
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::PkgVersion
       name: PkgVersion
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: MetaConfig
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: NextRelease
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: PodSyntaxTests
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::PodWeaver
       name: PodWeaver
@@ -61,51 +61,51 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: GatherDir
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::PruneCruft
       name: PruneCruft
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::ManifestSkip
       name: ManifestSkip
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: MetaYAML
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::License
       name: License
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::Readme
       name: Readme
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::ExtraTests
       name: ExtraTests
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: ExecDir
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::ShareDir
       name: ShareDir
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::MakeMaker
       name: MakeMaker
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::Manifest
       name: Manifest
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::TestRelease
       name: TestRelease
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Git/Check'
@@ -125,29 +125,29 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
       name: ConfirmRelease
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: UploadToCPAN
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: 4.101840
+      version: 4.101920
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: 4.101840
+      version: 4.101920
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: 1
-    version: 4.101840
+    version: 4.101920

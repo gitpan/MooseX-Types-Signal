@@ -1,6 +1,6 @@
 package MooseX::Types::Signal;
 BEGIN {
-  $MooseX::Types::Signal::VERSION = '1.101880';
+  $MooseX::Types::Signal::VERSION = '1.101920';
 }
 # ABSTRACT: a type to represent valid UNIX or Perl signals
 
@@ -12,17 +12,29 @@ use Scalar::Util qw(looks_like_number);
 use Config qw(%Config);
 { package _MXTS::Signals;
 BEGIN {
-  $_MXTS::Signals::VERSION = '1.101880';
+  $_MXTS::Signals::VERSION = '1.101920';
 }
-  use POSIX ':signal_h';
+  use POSIX 'signal_h';
+}
+
+sub get_unix_signal_number($) {
+    my $sig = shift;
+    # so apparently POSIX works differently on 5.8 vs. 5.10/5.12.
+    # fucking POSIX!
+
+    return eval {
+        my $glob = $_MXTS::Signals::{$sig};
+        ref $glob eq 'SCALAR' ? $$glob : $glob->();
+    };
 }
 
 # patch welcome.
-sub unix_signals {
-    my @keys = grep { eval { ${$_MXTS::Signals::{$_}} } }
-               grep { /^SIG/i } keys %_MXTS::Signals::;
+sub calc_unix_signals {
 
-    my $signals = { map { (uc $_) => ${$_MXTS::Signals::{$_}} } @keys };
+    my @keys = grep { get_unix_signal_number $_ }
+               grep { /^SIG[A-Za-z]/i } keys %_MXTS::Signals::;
+
+    my $signals = { map { (uc $_) => get_unix_signal_number $_ } @keys };
 
     my $sigrtmin = $signals->{SIGRTMIN};
     my $sigrtmax = $signals->{SIGRTMAX};
@@ -52,7 +64,7 @@ sub unix_signals {
     return $signals;
 }
 
-sub perl_signals {
+sub calc_perl_signals {
     my @numbers = split /\s+/, $Config{sig_num};
     my @names   = split /\s+/, $Config{sig_name};
 
@@ -64,6 +76,12 @@ sub perl_signals {
     }
     return \%result;
 }
+
+my $unix_signals = calc_unix_signals();
+my $perl_signals = calc_perl_signals();
+
+sub unix_signals { $unix_signals }
+sub perl_signals { $perl_signals }
 
 sub validate_unix_signal {
     my $sig = shift;
@@ -158,7 +176,7 @@ MooseX::Types::Signal - a type to represent valid UNIX or Perl signals
 
 =head1 VERSION
 
-version 1.101880
+version 1.101920
 
 =head1 SYNOPSIS
 
