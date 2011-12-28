@@ -23,7 +23,7 @@ requires:
   Scalar::Util: 0
 resources:
   repository: git://github.com/jrockway/moosex-types-signal.git
-version: 1.101931
+version: 1.101932
 x_Dist_Zilla:
   plugins:
     -

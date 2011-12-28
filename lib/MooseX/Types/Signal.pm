@@ -1,6 +1,6 @@
 package MooseX::Types::Signal;
 BEGIN {
-  $MooseX::Types::Signal::VERSION = '1.101931';
+  $MooseX::Types::Signal::VERSION = '1.101932';
 }
 # ABSTRACT: a type to represent valid UNIX or Perl signals
 
@@ -12,7 +12,7 @@ use Scalar::Util qw(looks_like_number);
 use Config qw(%Config);
 { package _MXTS::Signals;
 BEGIN {
-  $_MXTS::Signals::VERSION = '1.101931';
+  $_MXTS::Signals::VERSION = '1.101932';
 }
   use POSIX 'signal_h';
 }
@@ -176,7 +176,7 @@ MooseX::Types::Signal - a type to represent valid UNIX or Perl signals
 
 =head1 VERSION
 
-version 1.101931
+version 1.101932
 
 =head1 SYNOPSIS
 
