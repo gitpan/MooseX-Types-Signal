@@ -1,6 +1,6 @@
 package MooseX::Types::Signal;
 BEGIN {
-  $MooseX::Types::Signal::VERSION = '1.101930';
+  $MooseX::Types::Signal::VERSION = '1.101931';
 }
 # ABSTRACT: a type to represent valid UNIX or Perl signals
 
@@ -12,7 +12,7 @@ use Scalar::Util qw(looks_like_number);
 use Config qw(%Config);
 { package _MXTS::Signals;
 BEGIN {
-  $_MXTS::Signals::VERSION = '1.101930';
+  $_MXTS::Signals::VERSION = '1.101931';
 }
   use POSIX 'signal_h';
 }
@@ -148,10 +148,6 @@ sub coerce_signal {
     return coerce_unix_signal($sig) || coerce_perl_signal($sig);
 }
 
-subtype Signal, as PerlSignal|UnixSignal,
-    where   { !validate_signal($_) },
-    message { validate_signal($_) };
-
 subtype UnixSignal, as Int,
     where { !validate_unix_signal($_) },
     message { validate_unix_signal($_) };
@@ -159,6 +155,10 @@ subtype UnixSignal, as Int,
 subtype PerlSignal, as Int,
     where { !validate_perl_signal($_) },
     message { validate_perl_signal($_) };
+
+subtype Signal, as PerlSignal|UnixSignal,
+    where   { !validate_signal($_) },
+    message { validate_signal($_) };
 
 coerce UnixSignal, from Str, via { coerce_unix_signal($_) };
 coerce PerlSignal, from Str, via { coerce_perl_signal($_) };
@@ -176,7 +176,7 @@ MooseX::Types::Signal - a type to represent valid UNIX or Perl signals
 
 =head1 VERSION
 
-version 1.101930
+version 1.101931
 
 =head1 SYNOPSIS
 
@@ -236,7 +236,7 @@ Jonathan Rockway <jrockway@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Jonathan Rockway <jrockway@cpan.org>.
+This software is copyright (c) 2011 by Jonathan Rockway.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

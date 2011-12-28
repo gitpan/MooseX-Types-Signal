@@ -7,9 +7,9 @@ build_requires:
   Test::Exception: 0
   Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101920, CPAN::Meta::Converter version 2.101670'
+generated_by: 'Dist::Zilla version 4.200008, CPAN::Meta::Converter version 2.110930'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,132 +22,148 @@ requires:
   POSIX: 0
   Scalar::Util: 0
 resources:
-  repository: http://github.com/jrockway/moosex-types-signal
-version: 1.101930
+  repository: git://github.com/jrockway/moosex-types-signal.git
+version: 1.101931
 x_Dist_Zilla:
   plugins:
     -
-      class: Dist::Zilla::Plugin::AutoPrereq
-      name: AutoPrereq
-      version: 4.101920
+      class: Dist::Zilla::Plugin::BeJROCKWAY
+      name: '@JROCKWAY/BeJROCKWAY'
+      version: 1.102911
     -
-      class: Dist::Zilla::Plugin::AutoVersion
-      name: AutoVersion
-      version: 4.101920
+      class: Dist::Zilla::Plugin::AutoPrereqs
+      name: '@JROCKWAY/AutoPrereqs'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::PkgVersion
-      name: PkgVersion
-      version: 4.101920
-    -
-      class: Dist::Zilla::Plugin::MetaConfig
-      name: MetaConfig
-      version: 4.101920
-    -
-      class: Dist::Zilla::Plugin::NextRelease
-      name: NextRelease
-      version: 4.101920
+      name: '@JROCKWAY/PkgVersion'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
-      name: PodSyntaxTests
-      version: 4.101920
+      name: '@JROCKWAY/PodSyntaxTests'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::PodWeaver
-      name: PodWeaver
-      version: 3.101640
+      name: '@JROCKWAY/PodWeaver'
+      version: 3.101641
     -
       class: Dist::Zilla::Plugin::Repository
-      name: Repository
-      version: 0.13
+      name: '@JROCKWAY/Repository'
+      version: 0.18
     -
       class: Dist::Zilla::Plugin::GatherDir
-      name: GatherDir
-      version: 4.101920
+      name: '@JROCKWAY/GatherDir'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::PruneCruft
-      name: PruneCruft
-      version: 4.101920
+      name: '@JROCKWAY/PruneCruft'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::ManifestSkip
-      name: ManifestSkip
-      version: 4.101920
+      name: '@JROCKWAY/ManifestSkip'
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::MetaConfig
+      name: '@JROCKWAY/MetaConfig'
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::MetaJSON
+      name: '@JROCKWAY/MetaJSON'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::MetaYAML
-      name: MetaYAML
-      version: 4.101920
+      name: '@JROCKWAY/MetaYAML'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::License
-      name: License
-      version: 4.101920
+      name: '@JROCKWAY/License'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::Readme
-      name: Readme
-      version: 4.101920
+      name: '@JROCKWAY/Readme'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::ExtraTests
-      name: ExtraTests
-      version: 4.101920
+      name: '@JROCKWAY/ExtraTests'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::ExecDir
-      name: ExecDir
-      version: 4.101920
+      name: '@JROCKWAY/ExecDir'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::ShareDir
-      name: ShareDir
-      version: 4.101920
+      name: '@JROCKWAY/ShareDir'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::MakeMaker
-      name: MakeMaker
-      version: 4.101920
+      name: '@JROCKWAY/MakeMaker'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::Manifest
-      name: Manifest
-      version: 4.101920
+      name: '@JROCKWAY/Manifest'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::TestRelease
-      name: TestRelease
-      version: 4.101920
-    -
-      class: Dist::Zilla::Plugin::Git::Check
-      name: '@Git/Check'
-      version: 1.101801
-    -
-      class: Dist::Zilla::Plugin::Git::Commit
-      name: '@Git/Commit'
-      version: 1.101801
-    -
-      class: Dist::Zilla::Plugin::Git::Tag
-      name: '@Git/Tag'
-      version: 1.101801
-    -
-      class: Dist::Zilla::Plugin::Git::Push
-      name: '@Git/Push'
-      version: 1.101801
+      name: '@JROCKWAY/TestRelease'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
-      name: ConfirmRelease
-      version: 4.101920
+      name: '@JROCKWAY/ConfirmRelease'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
-      name: UploadToCPAN
-      version: 4.101920
+      name: '@JROCKWAY/UploadToCPAN'
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::NextRelease
+      name: '@JROCKWAY/NextRelease'
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::Git::NextVersion
+      name: '@JROCKWAY/Git::NextVersion'
+      version: 1.111590
+    -
+      class: Dist::Zilla::Plugin::Git::Check
+      name: '@JROCKWAY/@Git/Check'
+      version: 1.111590
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      name: '@JROCKWAY/@Git/Commit'
+      version: 1.111590
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: '@JROCKWAY/@Git/Tag'
+      version: 1.111590
+    -
+      class: Dist::Zilla::Plugin::Git::Push
+      name: '@JROCKWAY/@Git/Push'
+      version: 1.111590
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: 4.101920
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':IncModules'
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: 4.101920
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: 4.101920
+      version: 4.200008
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: 4.101920
+      version: 4.200008
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':MainModule'
+      version: 4.200008
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: 0
-    version: 4.101920
+    version: 4.200008
